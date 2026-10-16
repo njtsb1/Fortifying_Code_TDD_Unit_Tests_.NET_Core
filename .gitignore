@@ -1,0 +1,25 @@
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Re]leasePublic/
+x64/
+x86/
+AMD64/
+ARM/
+ARM64/
+bbin/
+obj/
+bin/
+
+## Visual Studio Tooling
+.vs/
+_ReSharper*/
+*.csproj.user

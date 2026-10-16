@@ -1,0 +1,236 @@
+/* Custom variables for Dark/Light Themes matching iOS Style */
+:root[data-theme="dark"] {
+    --bg-color: #000000;
+    --calc-bg: #1c1c1e;
+    --display-text: #ffffff;
+    --btn-fn: #a5a5a5;
+    --btn-fn-text: #000000;
+    --btn-num: #333333;
+    --btn-num-text: #ffffff;
+    --btn-op: #ff9f0a;
+    --btn-op-text: #ffffff;
+    --nav-bg: #161616;
+    --nav-text: #8e8e93;
+    --nav-active: #0a84ff;
+    --title-color: #ffffff;
+}
+
+:root[data-theme="light"] {
+    --bg-color: #f2f2f7;
+    --calc-bg: #ffffff;
+    --display-text: #000000;
+    --btn-fn: #e5e5ea;
+    --btn-fn-text: #000000;
+    --btn-num: #d1d1d6;
+    --btn-num-text: #000000;
+    --btn-op: #ff9500;
+    --btn-op-text: #ffffff;
+    --nav-bg: #ffffff;
+    --nav-text: #8e8e93;
+    --nav-active: #007aff;
+    --title-color: #000000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background 0.3s;
+}
+
+/* Header Container for Title and Switches */
+.app-header {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px 10px 20px;
+    gap: 15px;
+    z-index: 10;
+}
+
+.app-title {
+    color: var(--title-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.header-controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-btn {
+    background: var(--btn-num);
+    border: none;
+    color: var(--display-text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.icon-btn:hover {
+    filter: brightness(1.2);
+}
+
+#lang-select {
+    background: var(--btn-num);
+    color: var(--display-text);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Calculator Interface Area */
+.calculator-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.display {
+    text-align: right;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+}
+
+.preview {
+    font-size: 1.2rem;
+    color: #8e8e93;
+    min-height: 1.5rem;
+}
+
+.screen {
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: var(--display-text);
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* Rounded iOS Keypad Buttons Grid */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    border: none;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    font-size: 1.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.1s;
+}
+
+.btn:active {
+    filter: brightness(1.3);
+}
+
+.btn.fn {
+    background-color: var(--btn-fn);
+    color: var(--btn-fn-text);
+}
+
+.btn.num {
+    background-color: var(--btn-num);
+    color: var(--btn-num-text);
+}
+
+.btn.op {
+    background-color: var(--btn-op);
+    color: var(--btn-op-text);
+}
+
+.btn.equals {
+    background-color: #0b457f;
+    color: #ffffff;
+}
+
+.btn.zero {
+    grid-column: span 2;
+    aspect-ratio: auto;
+    border-radius: 40px;
+    justify-content: flex-start;
+    padding-left: 30px;
+}
+
+/* Badges styling */
+.tech-badges {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tech-badges span {
+    background-color: #1c1c1e;
+    color: #0a84ff;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Bottom Nav bar styling */
+.bottom-nav {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--nav-bg);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #2c2c2e;
+}
+
+.nav-item {
+    background: transparent;
+    border: none;
+    color: var(--nav-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.75rem;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.nav-item i {
+    font-size: 1.2rem;
+}
+
+.nav-item.active {
+    color: var(--nav-active);
+}

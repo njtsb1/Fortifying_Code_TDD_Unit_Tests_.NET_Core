@@ -1,0 +1,12 @@
+# IDEs and Editors settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# OS generated diagnostic folders
+.DS_Store
+Thumbs.db

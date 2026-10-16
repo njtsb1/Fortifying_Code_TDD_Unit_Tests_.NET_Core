@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDD Calculator - Frontend</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <!-- FontAwesome for Sun/Moon Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- New Layout Header with Title and Theme Button -->
+    <header class="app-header">
+        <h1 class="app-title">TDD Calculator</h1>
+        <div class="header-controls">
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">🌙</button>
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="lang-selector">
+                <select id="lang-select" aria-label="Change Language">
+                    <option value="en">EN</option>
+                    <option value="pt">PT</option>
+                    <option value="es">ES</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="calculator-container">
+        <!-- Display Screen -->
+        <div class="display" role="region" aria-live="polite">
+            <div id="preview" class="preview"></div>
+            <div id="screen" class="screen">0</div>
+        </div>
+
+        <!-- Keypad -->
+        <div class="keypad">
+            <button class="btn fn" data-action="clear">C</button>
+            <button class="btn fn" data-action="toggle-sign">±</button>
+            <button class="btn fn" data-action="percent">%</button>
+            <button class="btn op" data-op="divide">÷</button>
+
+            <button class="btn num">7</button>
+            <button class="btn num">8</button>
+            <button class="btn num">9</button>
+            <button class="btn op" data-op="multiply">×</button>
+
+            <button class="btn num">4</button>
+            <button class="btn num">5</button>
+            <button class="btn num">6</button>
+            <button class="btn op" data-op="subtract">-</button>
+
+            <button class="btn num">1</button>
+            <button class="btn num">2</button>
+            <button class="btn num">3</button>
+            <button class="btn op" data-op="add">+</button>
+
+            <button class="btn num zero">0</button>
+            <button class="btn num">.</button>
+            <button class="btn equals">=</button>
+        </div>
+
+        <!-- Tech Badges Footer -->
+        <div class="tech-badges">
+            <span>UIKit</span>
+            <span>SnapKit</span>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-tab="dashboard">
+            <i class="fas fa-th-large"></i>
+            <span data-i18n="nav-dashboard">Dashboard</span>
+        </button>
+        <button class="nav-item" data-tab="details">
+            <i class="fas fa-list-ul"></i>
+            <span data-i18n="nav-details">Details</span>
+        </button>
+        <button class="nav-item" data-tab="settings">
+            <i class="fas fa-cog"></i>
+            <span data-i18n="nav-settings">Settings</span>
+        </button>
+    </nav>
+
+    <script src="./src/script.js"></script>
+</body>
+</html>
